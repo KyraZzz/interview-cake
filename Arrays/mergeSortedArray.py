@@ -5,6 +5,8 @@ def mergeSortedArray(l1, l2):
             l2 : a list of sorted numbers
         Returns:
             a merged list of sorted numbers, combining l1 and l2
+        Time complexity: O(n)
+        Space complexity: O(n)
     """
     p1 = 0
     p2 = 0
