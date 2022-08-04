@@ -18,6 +18,8 @@ def reverseWords(message):
         Returns:
             A reversed list of the original message with in-word order preserved
             'steal pound cake'
+        Time complexity: O(n)
+        Space complexity: O(1)
     """
     # reverse all characters
     # within each word, reverse the characters again
