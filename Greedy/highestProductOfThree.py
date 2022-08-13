@@ -12,18 +12,16 @@ def highestProductOfThree(list_of_ints):
     high_prod_three = high_prod_two * list_of_ints[2]
     low = min(list_of_ints[0], list_of_ints[1])
     low_prod_two = high_prod_two
-    low_prod_three = high_prod_three
-    for i in range(2, len(list_of_ints)):
+    for i in range(2, len(list_of_ints)-1):
         current = list_of_ints[i]
         high_prod_three = max(high_prod_three, current * high_prod_two)
         high_prod_two = max(high_prod_two, current * high)
         high = max(high, current)
-        low_prod_three = min(low_prod_three, current * low_prod_two)
-        low_prod_two = min(low_prod_two, current * low)
+        low_prod_two = min(low_prod_two, current * low, current * high)
         low = min(low, current)
-    return high_prod_three
+    return max(list_of_ints[-1] * low_prod_two, list_of_ints[-1] * high_prod_two)
 
 
 if __name__ == '__main__':
-    list = [-10, -10, 1, 3, 2]
+    list = [10, 7, -5, 8, -11, 9, -100]
     print(highestProductOfThree(list))
